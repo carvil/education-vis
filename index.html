@@ -80,7 +80,7 @@
       g[i].selectAll(".mainBars").append("text").attr("class","perc")
         .attr("x",d=>(d.part=="primary"? -140: 200))
         .attr("y",d=>+6)
-        .text(function(d){ return d3.format("0.0%")(d.percent)})
+        .text(function(d){ return d.value})
         .attr("text-anchor",d=>(d.part=="primary"? "end": "start"));
     });
 
