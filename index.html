@@ -64,43 +64,38 @@
     [0,1].forEach(function(i){
       g[i].call(bp[i])
 
-      g[i].append("text").attr("x",-50).attr("y",-8).style("text-anchor","middle").text("Application");
-      g[i].append("text").attr("x", 600).attr("y",-8).style("text-anchor","middle").text("Document Type");
+      g[i]
+        .append("text")
+        .attr("x",-50)
+        .attr("y",-8)
+        .style("text-anchor","middle")
+        .text("Application");
 
-      g[i].selectAll(".mainBars")
-        .on("mouseover",mouseover)
-        .on("mouseout",mouseout);
+      g[i]
+        .append("text")
+        .attr("x", 600)
+        .attr("y",-8)
+        .style("text-anchor","middle")
+        .text("Document Type");
 
-      g[i].selectAll(".mainBars").append("text").attr("class","label")
+      g[i]
+        .selectAll(".mainBars")
+        .append("text")
+        .attr("class","label")
         .attr("x",d=>(d.part=="primary"? -30: 30))
         .attr("y",d=>+6)
         .text(d=>d.key)
         .attr("text-anchor",d=>(d.part=="primary"? "end": "start"));
 
-      g[i].selectAll(".mainBars").append("text").attr("class","perc")
+      g[i]
+        .selectAll(".mainBars")
+        .append("text")
+        .attr("class","perc")
         .attr("x",d=>(d.part=="primary"? -140: 200))
         .attr("y",d=>+6)
         .text(function(d){ return d.value})
         .attr("text-anchor",d=>(d.part=="primary"? "end": "start"));
     });
-
-    function mouseover(d){
-      [0,1].forEach(function(i){
-        bp[i].mouseover(d);
-
-        g[i].selectAll(".mainBars").select(".perc")
-        .text(function(d){ return d3.format("0.0%")(d.percent)});
-      });
-    }
-    function mouseout(d){
-      [0,1].forEach(function(i){
-        bp[i].mouseout(d);
-
-        g[i].selectAll(".mainBars").select(".perc")
-        .text(function(d){ return d3.format("0.0%")(d.percent)});
-      });
-    }
-    d3.select(self.frameElement).style("height", "1800px");
   });
   </script>
 </body>
