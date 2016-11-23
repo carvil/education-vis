@@ -64,13 +64,27 @@ def fetch_metadata(url):
 
     r = session.get(content_store_url, verify=False, timeout=10)
     json_data = r.json()
+    links = json_data.get('links')
+    taxons = links.get('taxons')
+    taxon_title = ''
+    taxon_base_path = ''
+    taxon_description = ''
+
+    if taxons and len(taxons) > 0:
+        taxon = taxons[0]
+        taxon_title = taxon.get(u'title')
+        taxon_base_path = taxon.get(u'base_path')
+        taxon_description = taxon.get(u'description')
 
     return [
         json_data.get('rendering_app') or '',
         json_data.get('publishing_app'),
         json_data.get('document_type'),
         json_data.get('format'),
-        json_data.get('schema_name')
+        json_data.get('schema_name'),
+        taxon_title,
+        taxon_base_path,
+        taxon_description
     ]
 
 
