@@ -1,0 +1,958 @@
+{
+  "name": "Education, training and skills",
+  "parents": [
+
+  ],
+  "children": [
+    {
+      "name": "School education from 5 to 18 years",
+      "parents": [
+        "Education, training and skills"
+      ],
+      "children": [
+        {
+          "name": "School curriculum, assessments and performance",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+            {
+              "name": "Primary curriculum, key stage 1",
+              "parents": [
+                "School curriculum, assessments and performance"
+              ],
+              "children": [
+                {
+                  "name": "Phonics",
+                  "parents": [
+                    "Early years curriculum from birth to 5 years",
+                    "Primary curriculum, key stage 1"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Assessments",
+                  "parents": [
+                    "Primary curriculum, key stage 1"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "English",
+                  "parents": [
+                    "Primary curriculum, key stage 1"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Maths",
+                  "parents": [
+                    "Primary curriculum, key stage 1"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Programmes of study",
+                  "parents": [
+                    "Primary curriculum, key stage 1"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Science",
+                  "parents": [
+                    "Primary curriculum, key stage 1"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Tests",
+                  "parents": [
+                    "Primary curriculum, key stage 1"
+                  ],
+                  "children": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Primary curriculum, key stage 2",
+              "parents": [
+                "School curriculum, assessments and performance"
+              ],
+              "children": [
+                {
+                  "name": "Phonics",
+                  "parents": [
+                    "Primary curriculum, key stage 2"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Assessments",
+                  "parents": [
+                    "Primary curriculum, key stage 2"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "English",
+                  "parents": [
+                    "Primary curriculum, key stage 2"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Maths",
+                  "parents": [
+                    "Primary curriculum, key stage 2"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Programmes of study",
+                  "parents": [
+                    "Primary curriculum, key stage 2"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Science",
+                  "parents": [
+                    "Primary curriculum, key stage 2"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Tests",
+                  "parents": [
+                    "Primary curriculum, key stage 2"
+                  ],
+                  "children": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Secondary curriculum, key stage 3 and key stage 4",
+              "parents": [
+                "School curriculum, assessments and performance"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Spiritual, moral, social and cultural development",
+              "parents": [
+                "School curriculum, assessments and performance"
+              ],
+              "children": [
+                {
+                  "name": "Cultural education",
+                  "parents": [
+                    "Spiritual, moral, social and cultural development"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Religious education",
+                  "parents": [
+                    "Spiritual, moral, social and cultural development"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Promoting British values and citizenship in schools",
+                  "parents": [
+                    "Spiritual, moral, social and cultural development"
+                  ],
+                  "children": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Personal, social, health and economic education",
+              "parents": [
+                "School curriculum, assessments and performance"
+              ],
+              "children": [
+                {
+                  "name": "Sex and relationship education",
+                  "parents": [
+                    "Personal, social, health and economic education"
+                  ],
+                  "children": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Physical education",
+              "parents": [
+                "School curriculum, assessments and performance"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Administration of exams and tests in schools",
+              "parents": [
+                "School curriculum, assessments and performance"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Key stage 5, AS and A Levels",
+              "parents": [
+                "School curriculum, assessments and performance"
+              ],
+              "children": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Governing and managing schools",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+            {
+              "name": "Managing school data",
+              "parents": [
+                "Governing and managing schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Copyright for schools",
+              "parents": [
+                "Governing and managing schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Procurement for schools",
+              "parents": [
+                "Governing and managing schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "School buildings and premises",
+              "parents": [
+                "Governing and managing schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Setting up or shutting down a school",
+              "parents": [
+                "Governing and managing schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Changing the status of a school",
+              "parents": [
+                "Governing and managing schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Dealing with complaints about a school",
+              "parents": [
+                "Governing and managing schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Whistleblowing in schools",
+              "parents": [
+                "Governing and managing schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "School insurance and risk management",
+              "parents": [
+                "Governing and managing schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "School governance",
+              "parents": [
+                "Governing and managing schools"
+              ],
+              "children": [
+                {
+                  "name": "Governance partnerships for multiple schools",
+                  "parents": [
+                    "School governance"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Pupil participation in school governance",
+                  "parents": [
+                    "School governance"
+                  ],
+                  "children": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Recruiting and managing school staff",
+              "parents": [
+                "Governing and managing schools",
+                "Teachers and school staff"
+              ],
+              "children": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Teachers and school staff",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+            {
+              "name": "Recruiting and managing school staff",
+              "parents": [
+                "Governing and managing schools",
+                "Teachers and school staff"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Teaching standards, conduct and practice",
+              "parents": [
+                "Teachers and school staff"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Teacher records",
+              "parents": [
+                "Teachers and school staff"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Teacher pay and conditions",
+              "parents": [
+                "Teachers and school staff"
+              ],
+              "children": [
+                {
+                  "name": "Teacher pensions",
+                  "parents": [
+                    "Teacher pay and conditions"
+                  ],
+                  "children": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Teacher training and professional development",
+              "parents": [
+                "Teachers and school staff"
+              ],
+              "children": [
+                {
+                  "name": "Qualified Teacher Status (QTS)",
+                  "parents": [
+                    "Teacher training and professional development"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Initial Teacher Training (ITT)",
+                  "parents": [
+                    "Teacher training and professional development"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "Subject Knowledge Enhancement (SKE)",
+                  "parents": [
+                    "Teacher training and professional development"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "National Professional Qualification for Headship (NPQH)",
+                  "parents": [
+                    "Teacher training and professional development"
+                  ],
+                  "children": [
+
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Extra-curricular activities for schools",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+            {
+              "name": "School trips",
+              "parents": [
+                "Extra-curricular activities for schools"
+              ],
+              "children": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "name": "School links with home, community and business",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "School behaviour and attendance",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+            {
+              "name": "School discipline and exclusions",
+              "parents": [
+                "School behaviour and attendance"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "School leaving age",
+              "parents": [
+                "School behaviour and attendance"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "School bullying",
+              "parents": [
+                "School behaviour and attendance"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Equality and diversity in schools",
+              "parents": [
+                "School behaviour and attendance"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "School absence and truancy",
+              "parents": [
+                "School behaviour and attendance"
+              ],
+              "children": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Careers guidance in schools",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "School admissions and pupil censuses",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+            {
+              "name": "Access to education for minority groups",
+              "parents": [
+                "School admissions and pupil censuses"
+              ],
+              "children": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "name": "School meals, transport and uniform",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+            {
+              "name": "School meals",
+              "parents": [
+                "School meals, transport and uniform"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "School transport",
+              "parents": [
+                "School meals, transport and uniform"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "School uniform",
+              "parents": [
+                "School meals, transport and uniform"
+              ],
+              "children": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Health, safety and pupil wellbeing",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+            {
+              "name": "Safeguarding pupils",
+              "parents": [
+                "Health, safety and pupil wellbeing"
+              ],
+              "children": [
+                {
+                  "name": "Prevent duty for schools",
+                  "parents": [
+                    "Safeguarding pupils"
+                  ],
+                  "children": [
+
+                  ]
+                },
+                {
+                  "name": "e-safety",
+                  "parents": [
+                    "Safeguarding pupils"
+                  ],
+                  "children": [
+
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alternatives to school",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+            {
+              "name": "Alternative provision and Pupil Referral Units",
+              "parents": [
+                "Alternatives to school"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Home schooling",
+              "parents": [
+                "Alternatives to school"
+              ],
+              "children": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "name": "School inspections",
+          "parents": [
+            "School education from 5 to 18 years"
+          ],
+          "children": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Early years curriculum from birth to 5 years",
+      "parents": [
+        "Education, training and skills",
+        "Running a childcare business"
+      ],
+      "children": [
+        {
+          "name": "Phonics",
+          "parents": [
+            "Early years curriculum from birth to 5 years",
+            "Primary curriculum, key stage 1"
+          ],
+          "children": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Funding and finance for education providers",
+      "parents": [
+        "Education, training and skills"
+      ],
+      "children": [
+        {
+          "name": "Funding and finance for schools",
+          "parents": [
+            "Funding and finance for education providers"
+          ],
+          "children": [
+            {
+              "name": "16 to 19 funding",
+              "parents": [
+                "Funding and finance for schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Pupil premium",
+              "parents": [
+                "Funding and finance for schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "Schools forums",
+              "parents": [
+                "Funding and finance for schools"
+              ],
+              "children": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Funding and finance for further education providers",
+          "parents": [
+            "Funding and finance for education providers"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "Funding for special educational needs and disability support",
+          "parents": [
+            "Funding and finance for education providers"
+          ],
+          "children": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Further education, skills and vocational training",
+      "parents": [
+        "Education, training and skills"
+      ],
+      "children": [
+        {
+          "name": "Adult and community learning",
+          "parents": [
+            "Further education, skills and vocational training"
+          ],
+          "children": [
+            {
+              "name": "Basic skills education",
+              "parents": [
+                "Adult and community learning"
+              ],
+              "children": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Apprenticeships, traineeships and internships",
+          "parents": [
+            "Further education, skills and vocational training"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "Further education, courses and qualifications",
+          "parents": [
+            "Further education, skills and vocational training"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "Inspection and performance of further education providers",
+          "parents": [
+            "Further education, skills and vocational training"
+          ],
+          "children": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "name": "University and higher education",
+      "parents": [
+        "Education, training and skills"
+      ],
+      "children": [
+        {
+          "name": "Higher education courses and qualifications",
+          "parents": [
+            "University and higher education"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "Governance and management for higher education institutions",
+          "parents": [
+            "University and higher education"
+          ],
+          "children": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Funding and finance for students",
+      "parents": [
+        "Education, training and skills"
+      ],
+      "children": [
+        {
+          "name": "Student loans",
+          "parents": [
+            "Funding and finance for students"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "Student sponsorship",
+          "parents": [
+            "Funding and finance for students"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "Financial help for students who are parents",
+          "parents": [
+            "Funding and finance for students"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "Financial help for international students in the UK",
+          "parents": [
+            "Funding and finance for students"
+          ],
+          "children": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Students with special needs, disabilities or disadvantages",
+      "parents": [
+        "Education, training and skills"
+      ],
+      "children": [
+        {
+          "name": "Able, gifted and talented pupils",
+          "parents": [
+            "Students with special needs, disabilities or disadvantages"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "Special educational needs and disability support in schools",
+          "parents": [
+            "Students with special needs, disabilities or disadvantages"
+          ],
+          "children": [
+            {
+              "name": "Assessing pupils with special educational needs",
+              "parents": [
+                "Special educational needs and disability support in schools"
+              ],
+              "children": [
+
+              ]
+            },
+            {
+              "name": "SEND code of practice",
+              "parents": [
+                "Special educational needs and disability support in schools"
+              ],
+              "children": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Vulnerable and disadvantaged pupils",
+          "parents": [
+            "Students with special needs, disabilities or disadvantages"
+          ],
+          "children": [
+
+          ]
+        },
+        {
+          "name": "Funding for special educational needs and disability",
+          "parents": [
+            "Students with special needs, disabilities or disadvantages"
+          ],
+          "children": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Support for education work in other countries",
+      "parents": [
+        "Education, training and skills"
+      ],
+      "children": [
+
+      ]
+    }
+  ]
+}
