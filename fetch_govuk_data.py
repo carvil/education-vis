@@ -77,6 +77,7 @@ def fetch_metadata(url):
         taxon_description = taxon.get(u'description')
 
     return [
+        json_data.get('content_id'),
         json_data.get('rendering_app') or '',
         json_data.get('publishing_app'),
         json_data.get('document_type'),
@@ -97,7 +98,7 @@ if __name__ == "__main__":
     csvfile = open(output_file, 'wb')
     content_writer = csv.writer(csvfile, delimiter=',')
     content_writer.writerow(
-        ['URL', 'rendering_app', 'publishing_app', 'document_type', 'format', 'schema_name']
+        ['URL', 'content_id', 'rendering_app', 'publishing_app', 'document_type', 'format', 'schema_name']
     )
     urls = fetch_education_urls(input_file)
 
