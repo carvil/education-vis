@@ -98,7 +98,18 @@ if __name__ == "__main__":
     csvfile = open(output_file, 'wb')
     content_writer = csv.writer(csvfile, delimiter=',')
     content_writer.writerow(
-        ['URL', 'content_id', 'rendering_app', 'publishing_app', 'document_type', 'format', 'schema_name']
+        [
+            'URL',
+            'content_id',
+            'rendering_app',
+            'publishing_app',
+            'document_type',
+            'format',
+            'schema_name',
+            'taxon_title',
+            'taxon_base_path',
+            'taxon_description'
+        ]
     )
     urls = fetch_education_urls(input_file)
 
