@@ -1180,6 +1180,7 @@ $(document).ready(function() {
   // Calculate total nodes, max label length
   var totalNodes = 0;
   var maxLabelLength = 0;
+  var maxNumberOfTaggedContent = 0;
   // panning variables
   var panSpeed = 200;
   var panBoundary = 20; // Within 20px from edges will pan when dragging.
@@ -1188,9 +1189,12 @@ $(document).ready(function() {
   var duration = 750;
   var root;
 
+  // Config
   // size of the diagram
   var viewerWidth = 1448; //$(document).width();
   var viewerHeight = 815; //$(document).height();
+  var MAX_NODE_RADIUS = 20;
+  var MIN_NODE_RADIUS = 4;
 
   var tree = d3.layout.tree()
       .size([viewerHeight, viewerWidth]);
@@ -1203,28 +1207,28 @@ $(document).ready(function() {
 
   // A recursive helper function for performing some setup by walking through all nodes
 
-  function visit(parent, visitFn, childrenFn) {
+  function visit(parent, visitFn) {
       if (!parent) return;
 
       visitFn(parent);
 
-      var children = childrenFn(parent);
+      var children = parent.children && parent.children.length ? parent.children : null;
+
       if (children) {
           var count = children.length;
           for (var i = 0; i < count; i++) {
-              visit(children[i], visitFn, childrenFn);
+              visit(children[i], visitFn);
           }
       }
   }
 
-  // Call visit function to establish maxLabelLength
   visit(treeData, function(d) {
       expand(d);
       totalNodes++;
       maxLabelLength = Math.max(d.name.length, maxLabelLength);
-
-  }, function(d) {
-      return d.children && d.children.length > 0 ? d.children : null;
+      if (d && d.number_of_tagged_content) {
+          maxNumberOfTaggedContent = Math.max(maxNumberOfTaggedContent, d.number_of_tagged_content);
+      }
   });
 
 
@@ -1393,17 +1397,21 @@ $(document).ready(function() {
           })
           .on('click', click);
 
+      nodeEnter.append("circle").attr('class', 'nodeCircle');
+
+      // Circle lying on top of the node, whose size is dependent on the number of guidance items
       nodeEnter.append("circle")
-          .attr('class', 'nodeCircle')
-          .attr("r", 0)
-          .style("fill", function(d) {
-              return d._children ? "lightsteelblue" : "#fff";
-          });
+          .attr("class", "guidance-node")
+          .attr("r", function(d) {
+              var numberOfGuidance = d.number_of_tagged_guidance_content || 0;
+              var radius = nodeRadius(numberOfGuidance);
+              return radius == MIN_NODE_RADIUS
+                  ? 0 // If it's the minimum radius, there's 0 guidance, so hide it
+                  : radius;
+          })
+          .style("fill", "red");
 
       nodeEnter.append("text")
-          .attr("x", function(d) {
-              return d.children || d._children ? -10 : 10;
-          })
           .attr("dy", ".35em")
           .attr('class', 'nodeText')
           .attr("text-anchor", function(d) {
@@ -1431,7 +1439,7 @@ $(document).ready(function() {
       // Update the text to reflect whether node has children or not.
       node.select('text')
           .attr("x", function(d) {
-              return 10;
+              return MAX_NODE_RADIUS + 5;
           })
           .attr("text-anchor", function(d) {
               return "start";
@@ -1440,9 +1448,14 @@ $(document).ready(function() {
               return d.name+" ("+d.number_of_tagged_content+" / "+d.number_of_tagged_guidance_content+")";
           });
 
-      // Change the circle fill depending on whether it has children and is collapsed
       node.select("circle.nodeCircle")
-          .attr("r", 4.5)
+          // Set the node radius depending on its number of content
+          .attr("r", function (d) {
+              var numberTagged = d.number_of_tagged_content || 0;
+              return nodeRadius(numberTagged);
+          })
+          // Change the circle fill depending on whether it has children and is collapsed.
+          // It appears that this can't be set when the node is appended to the DOM.
           .style("fill", function(d) {
               return d._children ? "lightsteelblue" : "#fff";
           });
@@ -1517,6 +1530,10 @@ $(document).ready(function() {
           d.x0 = d.x;
           d.y0 = d.y;
       });
+  }
+
+  function nodeRadius(numberOfTaggedContent) {
+    return MIN_NODE_RADIUS + (MAX_NODE_RADIUS - MIN_NODE_RADIUS) * numberOfTaggedContent / maxNumberOfTaggedContent;
   }
 
   // Append a group which holds all nodes and which the zoom Listener can act upon.
