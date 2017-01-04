@@ -1181,6 +1181,8 @@ $(document).ready(function() {
   var totalNodes = 0;
   var maxLabelLength = 0;
   var maxNumberOfTaggedContent = 0;
+  var taggedContentByDepth = [];
+  var guidanceContentByDepth = [];
   // panning variables
   var panSpeed = 200;
   var panBoundary = 20; // Within 20px from edges will pan when dragging.
@@ -1195,6 +1197,7 @@ $(document).ready(function() {
   var viewerHeight = 815; //$(document).height();
   var MAX_NODE_RADIUS = 20;
   var MIN_NODE_RADIUS = 4;
+  var GENERATION_WIDTH = 500;
 
   var tree = d3.layout.tree()
       .size([viewerHeight, viewerWidth]);
@@ -1207,27 +1210,37 @@ $(document).ready(function() {
 
   // A recursive helper function for performing some setup by walking through all nodes
 
-  function visit(parent, visitFn) {
+  function visit(parent, visitFn, depth) {
       if (!parent) return;
 
-      visitFn(parent);
+      depth = depth || 0;
+
+      visitFn(parent, depth);
 
       var children = parent.children && parent.children.length ? parent.children : null;
 
       if (children) {
           var count = children.length;
           for (var i = 0; i < count; i++) {
-              visit(children[i], visitFn);
+              visit(children[i], visitFn, depth + 1);
           }
       }
   }
 
-  visit(treeData, function(d) {
+  visit(treeData, function(d, depth) {
       expand(d);
       totalNodes++;
       maxLabelLength = Math.max(d.name.length, maxLabelLength);
+
       if (d && d.number_of_tagged_content) {
           maxNumberOfTaggedContent = Math.max(maxNumberOfTaggedContent, d.number_of_tagged_content);
+          taggedContentByDepth[depth] = taggedContentByDepth[depth] || 0;
+          taggedContentByDepth[depth] += d.number_of_tagged_content;
+      }
+
+      if (d && d.number_of_tagged_guidance_content) {
+        guidanceContentByDepth[depth] = guidanceContentByDepth[depth] || 0;
+          guidanceContentByDepth[depth] += d.number_of_tagged_guidance_content;
       }
   });
 
@@ -1380,7 +1393,7 @@ $(document).ready(function() {
           // d.y = (d.depth * (maxLabelLength * 16)); //maxLabelLength * 10px
           // alternatively to keep a fixed scale one can set a fixed depth per level
           // Normalize for fixed-depth by commenting out below line
-          d.y = (d.depth * 500); //500px per level.
+          d.y = (d.depth * GENERATION_WIDTH);
       });
 
       // Update the nodes…
@@ -1397,7 +1410,13 @@ $(document).ready(function() {
           })
           .on('click', click);
 
-      nodeEnter.append("circle").attr('class', 'nodeCircle');
+      nodeEnter.append("circle")
+          .attr('class', 'nodeCircle')
+          // Set the node radius depending on its number of content
+          .attr("r", function (d) {
+              var numberTagged = d.number_of_tagged_content || 0;
+              return nodeRadius(numberTagged);
+          });
 
       // Circle lying on top of the node, whose size is dependent on the number of guidance items
       nodeEnter.append("circle")
@@ -1449,13 +1468,7 @@ $(document).ready(function() {
           });
 
       node.select("circle.nodeCircle")
-          // Set the node radius depending on its number of content
-          .attr("r", function (d) {
-              var numberTagged = d.number_of_tagged_content || 0;
-              return nodeRadius(numberTagged);
-          })
           // Change the circle fill depending on whether it has children and is collapsed.
-          // It appears that this can't be set when the node is appended to the DOM.
           .style("fill", function(d) {
               return d._children ? "lightsteelblue" : "#fff";
           });
@@ -1538,6 +1551,16 @@ $(document).ready(function() {
 
   // Append a group which holds all nodes and which the zoom Listener can act upon.
   var svgGroup = baseSvg.append("g");
+
+  for (var depth = 0; depth < taggedContentByDepth.length; depth++) {
+    taggedContentByDepth[depth] = taggedContentByDepth[depth] || 0;
+    guidanceContentByDepth[depth] = guidanceContentByDepth[depth] || 0;
+
+    svgGroup.append("text")
+        .attr("class", "total-summary")
+        .text("(" + taggedContentByDepth[depth] + " / " + guidanceContentByDepth[depth] + ")")
+        .attr("x", GENERATION_WIDTH * depth + MAX_NODE_RADIUS + 10);
+  }
 
   // Define the root
   root = treeData;
