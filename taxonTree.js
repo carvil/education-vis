@@ -1437,7 +1437,7 @@ $(document).ready(function() {
               return "start";
           })
           .text(function(d) {
-              return d.name;//+" ("+d.number_of_tagged_content+" / "+d.number_of_tagged_guidance_content+")";
+              return d.name+" ("+d.number_of_tagged_content+" / "+d.number_of_tagged_guidance_content+")";
           });
 
       // Change the circle fill depending on whether it has children and is collapsed
