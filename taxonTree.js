@@ -1388,6 +1388,8 @@ $(document).ready(function() {
       var nodes = tree.nodes(root).reverse(),
           links = tree.links(nodes);
 
+      updateTotalSummaries(nodes);
+
       // Set widths between levels based on maxLabelLength.
       nodes.forEach(function(d) {
           // d.y = (d.depth * (maxLabelLength * 16)); //maxLabelLength * 10px
@@ -1549,18 +1551,29 @@ $(document).ready(function() {
     return MIN_NODE_RADIUS + (MAX_NODE_RADIUS - MIN_NODE_RADIUS) * numberOfTaggedContent / maxNumberOfTaggedContent;
   }
 
+  function updateTotalSummaries(displayedNodes) {
+    // Only display summaries for the displayed levels of the tree
+    var maxDepthToShow = 0;
+    displayedNodes.forEach(function (node) {
+      maxDepthToShow = Math.max(maxDepthToShow, node.depth);
+    });
+
+    // Remove the summaries and re-add them
+    svgGroup.selectAll("text.total-summary").remove();
+
+    for (var depth = 0; depth <= maxDepthToShow; depth++) {
+        taggedContentByDepth[depth] = taggedContentByDepth[depth] || 0;
+        guidanceContentByDepth[depth] = guidanceContentByDepth[depth] || 0;
+
+        svgGroup.append("text")
+            .attr("class", "total-summary")
+            .text("(" + taggedContentByDepth[depth] + " / " + guidanceContentByDepth[depth] + ")")
+            .attr("x", GENERATION_WIDTH * depth + MAX_NODE_RADIUS + 10);
+    }
+  }
+
   // Append a group which holds all nodes and which the zoom Listener can act upon.
   var svgGroup = baseSvg.append("g");
-
-  for (var depth = 0; depth < taggedContentByDepth.length; depth++) {
-    taggedContentByDepth[depth] = taggedContentByDepth[depth] || 0;
-    guidanceContentByDepth[depth] = guidanceContentByDepth[depth] || 0;
-
-    svgGroup.append("text")
-        .attr("class", "total-summary")
-        .text("(" + taggedContentByDepth[depth] + " / " + guidanceContentByDepth[depth] + ")")
-        .attr("x", GENERATION_WIDTH * depth + MAX_NODE_RADIUS + 10);
-  }
 
   // Define the root
   root = treeData;
