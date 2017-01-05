@@ -1180,6 +1180,9 @@ $(document).ready(function() {
   // Calculate total nodes, max label length
   var totalNodes = 0;
   var maxLabelLength = 0;
+  var maxNumberOfTaggedContent = 0;
+  var taggedContentByDepth = [];
+  var guidanceContentByDepth = [];
   // panning variables
   var panSpeed = 200;
   var panBoundary = 20; // Within 20px from edges will pan when dragging.
@@ -1188,9 +1191,13 @@ $(document).ready(function() {
   var duration = 750;
   var root;
 
+  // Config
   // size of the diagram
   var viewerWidth = 1448; //$(document).width();
   var viewerHeight = 815; //$(document).height();
+  var MAX_NODE_RADIUS = 20;
+  var MIN_NODE_RADIUS = 4;
+  var GENERATION_WIDTH = 500;
 
   var tree = d3.layout.tree()
       .size([viewerHeight, viewerWidth]);
@@ -1203,28 +1210,38 @@ $(document).ready(function() {
 
   // A recursive helper function for performing some setup by walking through all nodes
 
-  function visit(parent, visitFn, childrenFn) {
+  function visit(parent, visitFn, depth) {
       if (!parent) return;
 
-      visitFn(parent);
+      depth = depth || 0;
 
-      var children = childrenFn(parent);
+      visitFn(parent, depth);
+
+      var children = parent.children && parent.children.length ? parent.children : null;
+
       if (children) {
           var count = children.length;
           for (var i = 0; i < count; i++) {
-              visit(children[i], visitFn, childrenFn);
+              visit(children[i], visitFn, depth + 1);
           }
       }
   }
 
-  // Call visit function to establish maxLabelLength
-  visit(treeData, function(d) {
+  visit(treeData, function(d, depth) {
       expand(d);
       totalNodes++;
       maxLabelLength = Math.max(d.name.length, maxLabelLength);
 
-  }, function(d) {
-      return d.children && d.children.length > 0 ? d.children : null;
+      if (d && d.number_of_tagged_content) {
+          maxNumberOfTaggedContent = Math.max(maxNumberOfTaggedContent, d.number_of_tagged_content);
+          taggedContentByDepth[depth] = taggedContentByDepth[depth] || 0;
+          taggedContentByDepth[depth] += d.number_of_tagged_content;
+      }
+
+      if (d && d.number_of_tagged_guidance_content) {
+        guidanceContentByDepth[depth] = guidanceContentByDepth[depth] || 0;
+          guidanceContentByDepth[depth] += d.number_of_tagged_guidance_content;
+      }
   });
 
 
@@ -1371,12 +1388,14 @@ $(document).ready(function() {
       var nodes = tree.nodes(root).reverse(),
           links = tree.links(nodes);
 
+      updateTotalSummaries(nodes);
+
       // Set widths between levels based on maxLabelLength.
       nodes.forEach(function(d) {
           // d.y = (d.depth * (maxLabelLength * 16)); //maxLabelLength * 10px
           // alternatively to keep a fixed scale one can set a fixed depth per level
           // Normalize for fixed-depth by commenting out below line
-          d.y = (d.depth * 500); //500px per level.
+          d.y = (d.depth * GENERATION_WIDTH);
       });
 
       // Update the nodes…
@@ -1395,15 +1414,25 @@ $(document).ready(function() {
 
       nodeEnter.append("circle")
           .attr('class', 'nodeCircle')
-          .attr("r", 0)
-          .style("fill", function(d) {
-              return d._children ? "lightsteelblue" : "#fff";
+          // Set the node radius depending on its number of content
+          .attr("r", function (d) {
+              var numberTagged = d.number_of_tagged_content || 0;
+              return nodeRadius(numberTagged);
           });
 
-      nodeEnter.append("text")
-          .attr("x", function(d) {
-              return d.children || d._children ? -10 : 10;
+      // Circle lying on top of the node, whose size is dependent on the number of guidance items
+      nodeEnter.append("circle")
+          .attr("class", "guidance-node")
+          .attr("r", function(d) {
+              var numberOfGuidance = d.number_of_tagged_guidance_content || 0;
+              var radius = nodeRadius(numberOfGuidance);
+              return radius == MIN_NODE_RADIUS
+                  ? 0 // If it's the minimum radius, there's 0 guidance, so hide it
+                  : radius;
           })
+          .style("fill", "red");
+
+      nodeEnter.append("text")
           .attr("dy", ".35em")
           .attr('class', 'nodeText')
           .attr("text-anchor", function(d) {
@@ -1431,7 +1460,7 @@ $(document).ready(function() {
       // Update the text to reflect whether node has children or not.
       node.select('text')
           .attr("x", function(d) {
-              return 10;
+              return MAX_NODE_RADIUS + 5;
           })
           .attr("text-anchor", function(d) {
               return "start";
@@ -1440,9 +1469,8 @@ $(document).ready(function() {
               return d.name+" ("+d.number_of_tagged_content+" / "+d.number_of_tagged_guidance_content+")";
           });
 
-      // Change the circle fill depending on whether it has children and is collapsed
       node.select("circle.nodeCircle")
-          .attr("r", 4.5)
+          // Change the circle fill depending on whether it has children and is collapsed.
           .style("fill", function(d) {
               return d._children ? "lightsteelblue" : "#fff";
           });
@@ -1517,6 +1545,31 @@ $(document).ready(function() {
           d.x0 = d.x;
           d.y0 = d.y;
       });
+  }
+
+  function nodeRadius(numberOfTaggedContent) {
+    return MIN_NODE_RADIUS + (MAX_NODE_RADIUS - MIN_NODE_RADIUS) * numberOfTaggedContent / maxNumberOfTaggedContent;
+  }
+
+  function updateTotalSummaries(displayedNodes) {
+    // Only display summaries for the displayed levels of the tree
+    var maxDepthToShow = 0;
+    displayedNodes.forEach(function (node) {
+      maxDepthToShow = Math.max(maxDepthToShow, node.depth);
+    });
+
+    // Remove the summaries and re-add them
+    svgGroup.selectAll("text.total-summary").remove();
+
+    for (var depth = 0; depth <= maxDepthToShow; depth++) {
+        taggedContentByDepth[depth] = taggedContentByDepth[depth] || 0;
+        guidanceContentByDepth[depth] = guidanceContentByDepth[depth] || 0;
+
+        svgGroup.append("text")
+            .attr("class", "total-summary")
+            .text("(" + taggedContentByDepth[depth] + " / " + guidanceContentByDepth[depth] + ")")
+            .attr("x", GENERATION_WIDTH * depth + MAX_NODE_RADIUS + 10);
+    }
   }
 
   // Append a group which holds all nodes and which the zoom Listener can act upon.
