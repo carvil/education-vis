@@ -2,7 +2,7 @@
   [
     "frontend",
     "guide",
-    37
+    131
   ],
   [
     "frontend",
@@ -12,7 +12,7 @@
   [
     "frontend",
     "answer",
-    37
+    38
   ],
   [
     "frontend",
@@ -47,7 +47,7 @@
   [
     "whitehall-frontend",
     "guidance",
-    1647
+    1623
   ],
   [
     "whitehall-frontend",
@@ -57,7 +57,7 @@
   [
     "whitehall-frontend",
     "research",
-    1048
+    1050
   ],
   [
     "whitehall-frontend",
@@ -67,17 +67,17 @@
   [
     "whitehall-frontend",
     "statutory_guidance",
-    151
+    150
   ],
   [
     "whitehall-frontend",
     "consultation_outcome",
-    187
+    190
   ],
   [
     "whitehall-frontend",
     "closed_consultation",
-    13
+    11
   ],
   [
     "whitehall-frontend",
@@ -87,7 +87,7 @@
   [
     "whitehall-frontend",
     "press_release",
-    947
+    937
   ],
   [
     "whitehall-frontend",
@@ -97,7 +97,7 @@
   [
     "whitehall-frontend",
     "news_story",
-    485
+    494
   ],
   [
     "whitehall-frontend",
@@ -112,7 +112,7 @@
   [
     "whitehall-frontend",
     "correspondence",
-    268
+    264
   ],
   [
     "whitehall-frontend",
@@ -127,7 +127,7 @@
   [
     "whitehall-frontend",
     "about",
-    4
+    9
   ],
   [
     "whitehall-frontend",
@@ -157,17 +157,17 @@
   [
     "whitehall-frontend",
     "policy_paper",
-    181
+    180
   ],
   [
     "whitehall-frontend",
     "transparency",
-    161
+    156
   ],
   [
     "whitehall-frontend",
     "promotional",
-    17
+    11
   ],
   [
     "whitehall-frontend",
@@ -181,18 +181,18 @@
   ],
   [
     "whitehall-frontend",
+    "placeholder",
+    18
+  ],
+  [
+    "whitehall-frontend",
     "decision",
     427
   ],
   [
     "whitehall-frontend",
     "official_statistics",
-    259
-  ],
-  [
-    "whitehall-frontend",
-    "statistical_data_set",
-    41
+    266
   ],
   [
     "whitehall-frontend",
@@ -208,6 +208,11 @@
     "whitehall-frontend",
     "written_statement",
     82
+  ],
+  [
+    "whitehall-frontend",
+    "placeholder_topical_event",
+    1
   ],
   [
     "whitehall-frontend",
@@ -227,7 +232,7 @@
   [
     "whitehall-frontend",
     "national_statistics",
-    233
+    238
   ],
   [
     "whitehall-frontend",
@@ -247,12 +252,12 @@
   [
     "government-frontend",
     "detailed_guide",
-    504
+    416
   ],
   [
     "government-frontend",
     "document_collection",
-    269
+    271
   ],
   [
     "government-frontend",
@@ -266,38 +271,43 @@
   ],
   [
     "government-frontend",
-    "national_statistics_announcement",
-    7
+    "statistical_data_set",
+    41
   ],
   [
     "government-frontend",
-    "national",
-    15
+    "national_statistics_announcement",
+    9
   ],
   [
     "government-frontend",
     "statistics_announcement",
-    71
+    68
   ],
   [
     "government-frontend",
-    "official_statistics_announcement",
-    6
+    "national",
+    10
   ],
   [
     "government-frontend",
     "official",
-    15
+    12
+  ],
+  [
+    "government-frontend",
+    "official_statistics_announcement",
+    4
   ],
   [
     "collections",
     "topic",
-    7
+    8
   ],
   [
     "finder-frontend",
     "policy",
-    19
+    20
   ],
   [
     "manuals-frontend",
@@ -315,9 +325,9 @@
     2
   ],
   [
-    "whitehall",
-    "placeholder",
-    18
+    null,
+    null,
+    21
   ],
   [
     "smartanswers",
