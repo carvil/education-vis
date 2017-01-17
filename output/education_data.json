@@ -2,12 +2,12 @@
   [
     "frontend",
     "guide",
-    131
+    134
   ],
   [
     "frontend",
     "programme",
-    9
+    6
   ],
   [
     "frontend",
@@ -37,17 +37,17 @@
   [
     "whitehall-frontend",
     "organisation",
-    12
+    13
   ],
   [
     "whitehall-frontend",
     "form",
-    126
+    124
   ],
   [
     "whitehall-frontend",
     "guidance",
-    1623
+    1555
   ],
   [
     "whitehall-frontend",
@@ -57,17 +57,17 @@
   [
     "whitehall-frontend",
     "research",
-    1050
+    1053
   ],
   [
     "whitehall-frontend",
     "independent_report",
-    67
+    66
   ],
   [
     "whitehall-frontend",
     "statutory_guidance",
-    150
+    152
   ],
   [
     "whitehall-frontend",
@@ -77,17 +77,12 @@
   [
     "whitehall-frontend",
     "closed_consultation",
-    11
-  ],
-  [
-    "whitehall-frontend",
-    "open_consultation",
-    1
+    12
   ],
   [
     "whitehall-frontend",
     "press_release",
-    937
+    932
   ],
   [
     "whitehall-frontend",
@@ -106,13 +101,18 @@
   ],
   [
     "whitehall-frontend",
+    "placeholder_organisation",
+    8
+  ],
+  [
+    "whitehall-frontend",
     "corporate_report",
     106
   ],
   [
     "whitehall-frontend",
     "correspondence",
-    264
+    308
   ],
   [
     "whitehall-frontend",
@@ -121,13 +121,8 @@
   ],
   [
     "whitehall-frontend",
-    "placeholder_organisation",
-    4
-  ],
-  [
-    "whitehall-frontend",
     "about",
-    9
+    10
   ],
   [
     "whitehall-frontend",
@@ -162,12 +157,12 @@
   [
     "whitehall-frontend",
     "transparency",
-    156
+    309
   ],
   [
     "whitehall-frontend",
     "promotional",
-    11
+    10
   ],
   [
     "whitehall-frontend",
@@ -177,22 +172,22 @@
   [
     "whitehall-frontend",
     "foi_release",
-    58
+    57
   ],
   [
     "whitehall-frontend",
     "placeholder",
-    18
+    19
   ],
   [
     "whitehall-frontend",
     "decision",
-    427
+    426
   ],
   [
     "whitehall-frontend",
     "official_statistics",
-    266
+    281
   ],
   [
     "whitehall-frontend",
@@ -202,7 +197,7 @@
   [
     "whitehall-frontend",
     "notice",
-    179
+    26
   ],
   [
     "whitehall-frontend",
@@ -212,7 +207,12 @@
   [
     "whitehall-frontend",
     "placeholder_topical_event",
-    1
+    2
+  ],
+  [
+    "whitehall-frontend",
+    "equality_and_diversity",
+    4
   ],
   [
     "whitehall-frontend",
@@ -232,17 +232,12 @@
   [
     "whitehall-frontend",
     "national_statistics",
-    238
+    239
   ],
   [
     "whitehall-frontend",
     "news_article",
     2
-  ],
-  [
-    "whitehall-frontend",
-    "equality_and_diversity",
-    1
   ],
   [
     "government-frontend",
@@ -252,12 +247,12 @@
   [
     "government-frontend",
     "detailed_guide",
-    416
+    413
   ],
   [
     "government-frontend",
     "document_collection",
-    271
+    294
   ],
   [
     "government-frontend",
@@ -277,12 +272,12 @@
   [
     "government-frontend",
     "national_statistics_announcement",
-    9
+    12
   ],
   [
     "government-frontend",
-    "statistics_announcement",
-    68
+    "official_statistics_announcement",
+    9
   ],
   [
     "government-frontend",
@@ -292,12 +287,12 @@
   [
     "government-frontend",
     "official",
-    12
+    11
   ],
   [
     "government-frontend",
-    "official_statistics_announcement",
-    4
+    "statistics_announcement",
+    43
   ],
   [
     "collections",
@@ -327,7 +322,7 @@
   [
     null,
     null,
-    21
+    22
   ],
   [
     "smartanswers",
