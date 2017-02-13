@@ -2,7 +2,7 @@
   [
     "frontend",
     "guide",
-    134
+    137
   ],
   [
     "frontend",
@@ -47,7 +47,7 @@
   [
     "whitehall-frontend",
     "guidance",
-    1555
+    1549
   ],
   [
     "whitehall-frontend",
@@ -67,7 +67,7 @@
   [
     "whitehall-frontend",
     "statutory_guidance",
-    152
+    153
   ],
   [
     "whitehall-frontend",
@@ -177,17 +177,17 @@
   [
     "whitehall-frontend",
     "placeholder",
-    19
+    20
   ],
   [
     "whitehall-frontend",
     "decision",
-    426
+    425
   ],
   [
     "whitehall-frontend",
     "official_statistics",
-    281
+    288
   ],
   [
     "whitehall-frontend",
@@ -232,7 +232,7 @@
   [
     "whitehall-frontend",
     "national_statistics",
-    239
+    261
   ],
   [
     "whitehall-frontend",
@@ -247,17 +247,17 @@
   [
     "government-frontend",
     "detailed_guide",
-    413
+    409
   ],
   [
     "government-frontend",
     "document_collection",
-    294
+    297
   ],
   [
     "government-frontend",
     "working_group",
-    13
+    14
   ],
   [
     "government-frontend",
@@ -271,38 +271,43 @@
   ],
   [
     "government-frontend",
-    "national_statistics_announcement",
-    12
-  ],
-  [
-    "government-frontend",
     "official_statistics_announcement",
-    9
-  ],
-  [
-    "government-frontend",
-    "national",
-    10
+    6
   ],
   [
     "government-frontend",
     "official",
-    11
+    7
   ],
   [
     "government-frontend",
     "statistics_announcement",
-    43
+    36
+  ],
+  [
+    "government-frontend",
+    "national_statistics_announcement",
+    5
+  ],
+  [
+    "government-frontend",
+    "national",
+    2
   ],
   [
     "collections",
     "topic",
-    8
+    9
   ],
   [
     "finder-frontend",
     "policy",
     20
+  ],
+  [
+    null,
+    null,
+    23
   ],
   [
     "manuals-frontend",
@@ -318,11 +323,6 @@
     "manuals-frontend",
     "hmrc_manual_section",
     2
-  ],
-  [
-    null,
-    null,
-    22
   ],
   [
     "smartanswers",
