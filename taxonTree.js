@@ -1524,8 +1524,8 @@ $(document).ready(function() {
 
   // Config
   // size of the diagram
-  var viewerWidth = 1448; //$(document).width();
-  var viewerHeight = 815; //$(document).height();
+  var viewerWidth = $(document).width(); // 1448;
+  var viewerHeight = $(document).height(); // 815;
   var MAX_NODE_RADIUS = 20;
   var MIN_NODE_RADIUS = 4;
   var GENERATION_WIDTH = 500;
@@ -1625,8 +1625,8 @@ $(document).ready(function() {
 
   // define the baseSvg, attaching a class for styling and the zoomListener
   var baseSvg = d3.select("#tree-container").append("svg")
-      .attr("width", viewerWidth)
-      .attr("height", viewerHeight)
+      // .attr("width", viewerWidth)
+      // .attr("height", viewerHeight)
       .attr("class", "overlay")
       .call(zoomListener);
 
